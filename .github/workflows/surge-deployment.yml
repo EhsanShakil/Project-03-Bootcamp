@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Project-03-Bootcamp
+name: Project 2 Bootcamp
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -20,20 +20,21 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Installing Node
+      - name: Setup Node Environment
         uses: actions/setup-node@v2-beta
         with:
-          node-version: 12
+          version: 12
 
       - name: Setup Yarn Environment
-        uses: Borales/actions-yarn@v1.22.4
+        uses: Borales/actions-yarn@v2.1.0
         with:
           cmd: install
 
       - name: Creating Build
         run: npm run-script build
 
-      - name: Installing surge
+      - name: Installing Surge
         run: npm install --global surge
-      - name: Deploying on surge
+
+      - name: Deploying On Surge
         run: surge ./build http://project-03-bootcamp.surge.sh/ --token ${{secrets.BOOTCAMP_PROJECT_03}}
