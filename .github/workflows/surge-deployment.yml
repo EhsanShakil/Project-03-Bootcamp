@@ -26,7 +26,7 @@ jobs:
           node-version: 12
 
       - name: npm install
-        rum: npm i
+        run: npm i
 
       - name: Creating Build
         run: npm run build
