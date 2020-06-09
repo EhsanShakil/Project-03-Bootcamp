@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node Environment
         uses: actions/setup-node@v2-beta
         with:
-          version: 12
+          node-version: 12
 
       - name: Setup Yarn Environment
         uses: Borales/actions-yarn@v2.1.0
