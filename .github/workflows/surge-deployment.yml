@@ -25,13 +25,11 @@ jobs:
         with:
           node-version: 12
 
-      - name: Setup Yarn Environment
-        uses: Borales/actions-yarn@v2.1.0
-        with:
-          cmd: install
+      - name: npm install
+        rum: npm i
 
       - name: Creating Build
-        run: yarn build
+        run: npm run build
 
       - name: Installing Surge
         run: npm install --global surge
